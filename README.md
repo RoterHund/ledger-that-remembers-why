@@ -1,138 +1,63 @@
 # The Ledger That Remembers Why
 
-**From tokenisation to machine-verifiable finance — what an execution substrate must provide, and the case for Radix.**
+A vision for **verifiable finance at scale**, and the case for Radix as an execution substrate for institutional and agentic finance.
 
-This repository contains the website and source material for **The Ledger That Remembers Why**, an independent discussion paper on the architecture required for verifiable finance at scale.
+This repository contains the static website for *The Ledger That Remembers Why*, an independent discussion paper on what financial infrastructure needs to provide as markets move from digitising records to digitising execution.
 
-The central argument is that financial infrastructure must increasingly do more than move digital assets. As markets automate and software agents begin to initiate financial activity, the execution substrate itself needs to establish:
+## The argument
 
-* what asset moved;
-* who had authority to act;
-* which rules applied;
-* whether those rules were satisfied;
-* whether execution was atomic and final;
-* and, where required, how those facts can be verified without exposing information unnecessarily.
+Financial infrastructure increasingly needs to establish more than the fact that value moved. It needs to make the asset, authority, rules and outcome of a transaction verifiable at the point of execution.
 
-The paper proposes **seven technology-neutral principles for verifiable finance** and uses Radix as a worked case against them.
+The paper proposes seven technology-neutral principles for that architecture and uses Radix as a worked case. It looks at where the current model is strong, where important gaps remain, and what community-led scaling work should prove.
 
-## The thesis
-
-Finance is moving from digitising records to digitising execution.
-
-The important question is therefore no longer simply how quickly a system can change financial state. It is whether the basis for that state change can be verified without reconstructing trust afterwards.
-
-The proposed north star is:
+The north star is simple:
 
 > **Verifiable finance at scale.**
 
-That means financial infrastructure in which assets, authority and execution rules are machine-verifiable, confidentiality can coexist with verification, and those properties survive as the system scales.
+## Key themes
 
-## Why Radix
+- assets understood by the execution environment
+- attributable and auditable state changes
+- verification inside the transaction boundary
+- deterministic technical finality
+- confidentiality without giving up verifiability
+- explicit, scoped and attestable authority
+- verification that survives network boundaries
+- scaling the Radix Engine rather than optimising for a headline TPS number
 
-Radix is examined because of its asset-oriented execution model, native resources, transaction manifests, authorisation primitives and atomic transaction construction.
+Privacy with proof remains the main institutional gap. The paper also argues that Hyperscale should be judged by whether the Radix Engine and its financial semantics scale under real workloads, not by synthetic throughput alone.
 
-The paper does not assume that Radix satisfies the requirements by definition. The argument works in the opposite direction:
+## Files
 
-> **Radix becomes strategically interesting to the extent that its architecture satisfies the requirements of verifiable finance.**
+- `index.html`: the complete dependency-free website
+- `README.md`: this file
 
-The paper therefore distinguishes between:
+## Run locally
 
-* capabilities that already provide a strong foundation;
-* capabilities that are only partially complete;
-* strategic gaps, particularly privacy with proof;
-* and capabilities that still need to be demonstrated at scale.
+No build step is required. Open `index.html` in a browser.
 
-## Seven principles
+## Deploy with GitHub Pages
 
-The paper proposes seven principles for a financial execution substrate:
+1. Put `index.html` and `README.md` in the repository root.
+2. Open **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the `main` branch and `/ (root)`.
+5. Save.
 
-1. **Assets have protocol-understood behaviour**
-2. **State changes are attributable and auditable**
-3. **Verification executes with the transaction**
-4. **Finality is deterministic and history verifiable**
-5. **Confidentiality is compatible with verification**
-6. **Authority is explicit, scoped and attestable**
-7. **Verification survives network boundaries**
+GitHub will publish the site on a `github.io` URL. A custom domain can be added later from the same Pages settings.
 
-These principles are intended to be technology-neutral and applicable beyond Radix.
+## Before publishing
 
-## Privacy and institutional finance
+Replace the placeholder canonical and Open Graph URL in `index.html`:
 
-Institutional finance requires both **confidentiality** and **verifiability**.
+`https://example.com/the-ledger-that-remembers-why`
 
-A fully transparent system sacrifices the first. A fully opaque system sacrifices the second.
+with the final public URL.
 
-The challenge is therefore to achieve:
-
-**confidentiality without surrendering verifiability.**
-
-For Radix, this is not simply a missing privacy feature. It is one of the principal conditions for a credible institutional proposition.
-
-## Hyperscale
-
-The paper argues that Hyperscale should be understood as an effort to **scale the Radix Engine, not a benchmark**.
-
-The objective is not TPS in isolation.
-
-The meaningful test is whether the Radix execution model — resources, components, authorisation, atomic transactions and deterministic outcomes — can operate horizontally at meaningful market scale without losing the properties that make it valuable.
-
-> **The question is not simply: how many transactions can Hyperscale process? It is: does the Radix Engine scale?**
-
-Throughput is an output of that test, not the purpose of it.
-
-## Build the proof in public
-
-The paper proposes demonstrating the thesis through real financial-market workloads rather than synthetic performance tests alone.
-
-Examples include:
-
-* tokenised commercial-bank money;
-* atomic FX payment-versus-payment;
-* digital bond issuance;
-* delivery-versus-payment settlement;
-* coupons and redemption;
-* repo and collateral substitution;
-* scoped machine authority;
-* compliance-gated assets;
-* privacy-preserving eligibility proofs;
-* and interoperability across financial infrastructures.
-
-The idea is simple:
-
-**Where the architecture works, show it. Where it does not, expose the missing primitive.**
-
-## About this repository
-
-This repository contains a dependency-free static website.
-
-### Files
-
-* `index.html` — complete article and website
-* `README.md` — repository and deployment information
-
-The site can be deployed directly using GitHub Pages, Netlify, Vercel or any standard static web host.
+It is also worth checking the publication date, author metadata and social preview text before launch.
 
 ## Status
 
-This is an **independent discussion paper**.
+This is an independent discussion paper. It is not an official publication of any Radix entity. References to future capabilities or priorities are proposals for discussion rather than statements of an adopted roadmap.
 
-It is not an official publication of any Radix entity, and references to future capabilities, architectural direction or priorities are proposals for discussion rather than statements of an adopted roadmap.
-
-Technical and competitive observations should be revalidated if the paper is republished significantly later than its original publication date.
-
-## Discussion
-
-The paper is intended to be challenged.
-
-In particular:
-
-* Are the seven principles the right ones?
-* Is privacy-with-proof the principal institutional gap?
-* Does the distinction between verification and capacity hold?
-* Which Radix properties should be treated as architectural invariants?
-* What should constitute a credible Hyperscale demonstration?
-* Which financial workloads should be built publicly first?
-
-The aim is not to ask the community or the market to accept the thesis on trust.
-
-It is to make the thesis testable.
+The paper is intended to be challenged. The point is not to ask the community or the market to accept the thesis on trust, but to make the thesis testable.
