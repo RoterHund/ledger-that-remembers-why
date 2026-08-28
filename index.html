@@ -49,8 +49,8 @@
       --success: #1f6b4f;
       --warning: #8f5e00;
       --danger: #9a3d3d;
-      --max: 1180px;
-      --article: 760px;
+      --max: 1400px;
+      --article: 720px;
       --shadow: 0 18px 50px rgba(27, 23, 13, .08);
     }
 
@@ -199,8 +199,8 @@
 
     .article-shell {
       max-width: var(--max); margin: 0 auto; padding: 0 24px 100px;
-      display: grid; grid-template-columns: 240px minmax(0, var(--article)) 1fr;
-      gap: 54px;
+      display: grid; grid-template-columns: 220px minmax(0, var(--article)) 300px;
+      gap: 48px; justify-content: center;
     }
 
     .toc {
@@ -241,7 +241,7 @@
     strong { font-weight: 760; }
 
     blockquote {
-      margin: 46px -58px; padding: 30px 38px 34px;
+      margin: 46px -40px; padding: 30px 38px 34px;
       background: var(--surface); border: 1px solid var(--line);
       border-radius: 20px; box-shadow: var(--shadow);
       font-size: clamp(1.45rem, 3vw, 2.15rem); line-height: 1.28; letter-spacing: -.02em;
@@ -313,10 +313,11 @@
 
     .rail {
       align-self: start; position: sticky; top: 86px;
+      max-height: calc(100vh - 110px); overflow: auto;
     }
     .rail-card {
       border: 1px solid var(--line); background: var(--surface); border-radius: 18px;
-      padding: 20px; font-size: 13px; color: var(--muted);
+      padding: 20px 22px; font-size: 13.5px; line-height: 1.6; color: var(--muted);
     }
     .rail-card strong { color: var(--ink); display: block; margin-bottom: 8px; }
     .rail-card + .rail-card { margin-top: 14px; }
@@ -345,9 +346,13 @@
     }
     .skip-link:focus { top: 12px; }
 
+    @media (max-width: 1240px) {
+      .article-shell { grid-template-columns: 210px minmax(0, var(--article)); }
+      .rail { display: none; }
+    }
+
     @media (max-width: 1040px) {
       .article-shell { grid-template-columns: 190px minmax(0, 1fr); }
-      .rail { display: none; }
       .hero { grid-template-columns: 1fr; gap: 34px; }
       .hero-meta { max-width: 420px; }
     }
