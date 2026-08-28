@@ -49,8 +49,8 @@
       --success: #1f6b4f;
       --warning: #8f5e00;
       --danger: #9a3d3d;
-      --max: 1400px;
-      --article: 720px;
+      --max: 1200px;
+      --article: 740px;
       --shadow: 0 18px 50px rgba(27, 23, 13, .08);
     }
 
@@ -199,8 +199,8 @@
 
     .article-shell {
       max-width: var(--max); margin: 0 auto; padding: 0 24px 100px;
-      display: grid; grid-template-columns: 220px minmax(0, var(--article)) 300px;
-      gap: 48px; justify-content: center;
+      display: grid; grid-template-columns: 250px minmax(0, var(--article));
+      gap: 84px; justify-content: center;
     }
 
     .toc {
@@ -311,17 +311,6 @@
       color: var(--accent-2);
     }
 
-    .rail {
-      align-self: start; position: sticky; top: 86px;
-      max-height: calc(100vh - 110px); overflow: auto;
-    }
-    .rail-card {
-      border: 1px solid var(--line); background: var(--surface); border-radius: 18px;
-      padding: 20px 22px; font-size: 13.5px; line-height: 1.6; color: var(--muted);
-    }
-    .rail-card strong { color: var(--ink); display: block; margin-bottom: 8px; }
-    .rail-card + .rail-card { margin-top: 14px; }
-
     .sources {
       margin-top: 86px; padding-top: 44px; border-top: 1px solid var(--line);
     }
@@ -346,11 +335,6 @@
     }
     .skip-link:focus { top: 12px; }
 
-    @media (max-width: 1240px) {
-      .article-shell { grid-template-columns: 210px minmax(0, var(--article)); }
-      .rail { display: none; }
-    }
-
     @media (max-width: 1040px) {
       .article-shell { grid-template-columns: 190px minmax(0, 1fr); }
       .hero { grid-template-columns: 1fr; gap: 34px; }
@@ -373,7 +357,7 @@
     }
 
     @media print {
-      .site-header, .toc, .rail, .reading-progress, footer { display: none !important; }
+      .site-header, .toc, .reading-progress, footer { display: none !important; }
       body { background: white; color: black; font-size: 11pt; }
       .hero, .article-shell { display: block; max-width: none; padding: 0; }
       .hero { margin-bottom: 28pt; }
@@ -872,21 +856,6 @@
         <strong>About this article.</strong> This is an independent discussion paper written from the perspective of a practitioner in institutional financial-market technology. It is not an official publication of any Radix entity. References to future capabilities or priorities are proposals for discussion rather than statements of an adopted roadmap. Technical and competitive observations are stated as of August 2026 and should be revalidated before later republication.
       </div>
     </article>
-
-    <aside class="rail" aria-label="Article notes">
-      <div class="rail-card">
-        <strong>Central proposition</strong>
-        Evaluate asset model, authority, transaction model, privacy, finality, interoperability and scale together, then use those properties as community-level architectural invariants.
-      </div>
-      <div class="rail-card">
-        <strong>The hinge</strong>
-        Privacy-with-proof is not a secondary roadmap item. It is the capability on which the institutional thesis turns.
-      </div>
-      <div class="rail-card">
-        <strong>Current Hyperscale status</strong>
-        Forward-looking work is community-led through <code>hyperscale-rs</code> and the Xi’an RFC. The implementation remains work in progress.
-      </div>
-    </aside>
   </div>
 </main>
 
